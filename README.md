@@ -159,7 +159,7 @@ Used as a secure jump host to access EC2 instances in private subnets for mainte
 > All security groups follow the **least-privilege** model. No direct access to the database or EC2 instances is allowed from the public internet.
 
 
-## 📈 Project Workflow
+## Project Workflow
 
 1. **User Access via Route 53 & ALB**  
    A user sends an HTTP/HTTPS request to the application's domain name, managed by **Route 53**.
@@ -249,15 +249,6 @@ This project uses Amazon CloudWatch and Amazon SNS to monitor the health and per
 - “RDS failover detected”
 - “ASG: Failed to launch instance”
 
----
-
-### Alert Flow Diagram
-
-```mermaid
-graph TD
-    A[Web EC2 CPU > 75%] --> B(CloudWatch Alarm)
-    B --> C{SNS Topic: WebAppOpsAlerts}
-    C --> D[Email Notification]
 
 > All monitoring and alerting components are configured with cost-efficiency in mind — only critical metrics are tracked to avoid unnecessary CloudWatch charges.
 
