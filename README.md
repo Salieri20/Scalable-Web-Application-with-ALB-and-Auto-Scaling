@@ -6,6 +6,8 @@ This project demonstrates how to deploy a highly available and scalable 2-tier w
 
 ![Architecture Diagram](aws-architecture-v2.png)
 
+> You can find the editable architecture diagram [here](https://lucid.app/lucidchart/795564c4-7d8f-46da-ac06-f9f99d837c1b/edit?viewport_loc=-4514%2C-1054%2C8069%2C3195%2C0_0&invitationId=inv_c66948fc-7b7e-4fab-8534-7a228e3dfda5).
+
 ## Key AWS Services Used
 
 This architecture represents a 2-tier scalable web application deployed on AWS using the following services:
