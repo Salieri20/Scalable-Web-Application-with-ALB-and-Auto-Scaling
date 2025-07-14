@@ -4,7 +4,7 @@ This project demonstrates how to deploy a highly available and scalable 2-tier w
 
 ## Architecture Overview
 
-![Architecture Diagram](aw-architecture.png)
+![Architecture Diagram](aws-architecture.png)
 
 ## Key AWS Services Used
 
