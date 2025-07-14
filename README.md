@@ -14,9 +14,9 @@ This architecture represents a 2-tier scalable web application deployed on AWS u
 - **Application Load Balancer (ALB)**: Distributes incoming traffic to healthy EC2 instances.
 - **Auto Scaling Group (ASG)**: Automatically adds or removes EC2 instances based on load.
 - **Amazon RDS (MySQL)**: Managed relational database with Multi-AZ for high availability.
-- **IAM**: Used for assigning least-privilege access to services (e.g., EC2, ALB, CloudWatch).
+- **IAM**: Used for assigning least-privilege access to services.
 - **CloudWatch + SNS**: Monitors metrics and sends notifications on specific events.
-- **NAT Gateway**: Allows instances in private subnets to access the internet securely.
+- **NAT Gateway**: Allows instances in private subnets to access the internet securely in case the EC2 instances need to be updated or batched.
 - **Bastion Host**: Deployed in a public subnet to access private EC2 instances via SSH.
 
 
@@ -118,6 +118,11 @@ This project uses Amazon CloudWatch and SNS to monitor the health and performanc
   - “ALB: High 5XX error rate detected”
   - “RDS: Failover occurred”
   - “ASG: Instance launch failure”
+graph TD
+    A[High CPU on EC2] --> B(CloudWatch Alarm)
+    B --> C{SNS Topic}
+    C --> D[Email]
+    C --> E[Slack Webhook]
 
 ### Example Alert Flow
 
